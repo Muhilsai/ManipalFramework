@@ -144,6 +144,11 @@ public class WebDriverUtils {
 			ATUReports.add("Mouse over "+loc.toString(), LogAs.PASSED, new CaptureScreen(
                     ScreenshotOf.BROWSER_PAGE));
 		}
+		public void Alert() {
+			driver.switchTo().alert().accept();
+			ATUReports.add("Alert " ,  LogAs.PASSED, new CaptureScreen(
+                    ScreenshotOf.BROWSER_PAGE));
+		}
 		
 		public void assertTitle(String title) {
 			try
@@ -161,6 +166,7 @@ public class WebDriverUtils {
 		public void assertText(By loc, String text) {
 			try
 			{
+			System.out.println(find(loc).getText());	
 			Assert.assertEquals(find(loc).getText(), text);
 			ATUReports.add("Assert Text",text,find(loc).getText(), LogAs.PASSED, new CaptureScreen(
                     ScreenshotOf.BROWSER_PAGE));
@@ -170,6 +176,8 @@ public class WebDriverUtils {
 	                    ScreenshotOf.BROWSER_PAGE));
 			}
 		}
+		
+		
 		
 		public void switchWindowByTitle(String title) {
 			Set<String> winids = driver.getWindowHandles();

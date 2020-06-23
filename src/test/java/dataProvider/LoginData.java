@@ -7,7 +7,7 @@ public class LoginData {
 	int a=2;
 	@DataProvider
 	public Object[][] negativeLogin(){
-		return ExcelUtils.getData("TestData.xls", "NegativeLogin");
+		return ExcelUtils.getData("TestData.xls", "Negative");
 	}
 	
 	@DataProvider
