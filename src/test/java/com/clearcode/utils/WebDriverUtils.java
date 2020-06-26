@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -107,6 +108,7 @@ public class WebDriverUtils {
 			try
 			{
 				find(loc).click();
+				
 			}
 			catch(WebDriverException e) {
 				try
@@ -123,6 +125,13 @@ public class WebDriverUtils {
 			ATUReports.add("Click at"+loc.toString(), LogAs.PASSED, new CaptureScreen(
                     ScreenshotOf.BROWSER_PAGE));
 		}
+		
+		public void getAttrValue(By loc) {
+			String text = find(loc).getAttribute("value");
+			System.out.println("The record number is  " + text);
+			
+		}
+		
 		
 		public void selectByVisibleText(By loc, String value) {
 			Select obj = new Select(find(loc));
@@ -145,6 +154,8 @@ public class WebDriverUtils {
                     ScreenshotOf.BROWSER_PAGE));
 		}
 		public void Alert() {
+			wait = new WebDriverWait(driver, 15);
+			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 			ATUReports.add("Alert " ,  LogAs.PASSED, new CaptureScreen(
                     ScreenshotOf.BROWSER_PAGE));
@@ -163,19 +174,44 @@ public class WebDriverUtils {
 			}
 		}
 		
-		public void assertText(By loc, String text) {
+		public void assertText(By loc,String text) {
 			try
 			{
-			System.out.println(find(loc).getText());	
-			Assert.assertEquals(find(loc).getText(), text);
-			ATUReports.add("Assert Text",text,find(loc).getText(), LogAs.PASSED, new CaptureScreen(
+			String Actual = find(loc).getText();
+			
+			if(text.contains(Actual))
+			{
+				System.out.println("String Match");
+			}
+			else
+			{
+				System.out.println("String not matched : "+ Actual);
+			}
+			
+			ATUReports.add("Assert Text",text, LogAs.PASSED, new CaptureScreen(
                     ScreenshotOf.BROWSER_PAGE));
 			}
 			catch(AssertionError e) {
-				ATUReports.add("Assert Text",text,find(loc).getText(), LogAs.FAILED, new CaptureScreen(
+				ATUReports.add("Assert Text",text, LogAs.FAILED, new CaptureScreen(
 	                    ScreenshotOf.BROWSER_PAGE));
 			}
 		}
+		
+//		public void assertText(By loc, String text) {
+//			try
+//			{
+//				wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+//			wait.until(ExpectedConditions.textToBe(loc, text));
+//				
+//			//Assert.assertEquals(find(loc).getText(), text);
+//			ATUReports.add("Assert Text",text,find(loc).getText(), LogAs.PASSED, new CaptureScreen(
+//                    ScreenshotOf.BROWSER_PAGE));
+//			}
+//			catch(AssertionError e) {
+//				ATUReports.add("Assert Text",text,find(loc).getText(), LogAs.FAILED, new CaptureScreen(
+//	                    ScreenshotOf.BROWSER_PAGE));
+//			}
+//		}
 		
 		
 		

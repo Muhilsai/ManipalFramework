@@ -61,20 +61,23 @@
     <line>
       <![CDATA[STEP20]]>
     </line>
+    <line>
+      <![CDATA[STEP21]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="43122" started-at="2020-06-24T00:13:34 IST" finished-at="2020-06-24T00:14:17 IST">
+  <suite name="Default suite" duration-ms="34780" started-at="2020-06-26T11:46:08 IST" finished-at="2020-06-26T11:46:43 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="43122" started-at="2020-06-24T00:13:34 IST" finished-at="2020-06-24T00:14:17 IST">
+    <test name="Default test" duration-ms="34780" started-at="2020-06-26T11:46:08 IST" finished-at="2020-06-26T11:46:43 IST">
       <class name="com.clearcode.testsuite.TestSuite1">
-        <test-method status="PASS" signature="launch()[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="launch" is-config="true" duration-ms="9335" started-at="2020-06-24T00:13:34 IST" finished-at="2020-06-24T00:13:43 IST">
+        <test-method status="PASS" signature="launch()[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="launch" is-config="true" duration-ms="9188" started-at="2020-06-26T11:46:08 IST" finished-at="2020-06-26T11:46:17 IST">
           <reporter-output>
             <line>
               <![CDATA[STEP1]]>
             </line>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="PASS" signature="loadUrl()[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="loadUrl" is-config="true" duration-ms="6032" started-at="2020-06-24T00:13:44 IST" finished-at="2020-06-24T00:13:50 IST">
+        <test-method status="PASS" signature="loadUrl()[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="loadUrl" is-config="true" duration-ms="4372" started-at="2020-06-26T11:46:18 IST" finished-at="2020-06-26T11:46:22 IST">
           <reporter-output>
             <line>
               <![CDATA[STEP2]]>
@@ -84,7 +87,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loadUrl -->
-        <test-method status="PASS" signature="product(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="product" duration-ms="27121" started-at="2020-06-24T00:13:50 IST" data-provider="negativeLogin" finished-at="2020-06-24T00:14:17 IST">
+        <test-method status="PASS" signature="product(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="product" duration-ms="20454" started-at="2020-06-26T11:46:22 IST" data-provider="positiveLogin" finished-at="2020-06-26T11:46:43 IST">
           <params>
             <param index="0">
               <value>
@@ -184,9 +187,12 @@
             <line>
               <![CDATA[STEP20]]>
             </line>
+            <line>
+              <![CDATA[STEP21]]>
+            </line>
           </reporter-output>
         </test-method> <!-- product -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="close" is-config="true" duration-ms="5" started-at="2020-06-24T00:14:17 IST" finished-at="2020-06-24T00:14:17 IST">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.clearcode.testsuite.TestSuite1@26aa12dd]" name="close" is-config="true" duration-ms="21" started-at="2020-06-26T11:46:43 IST" finished-at="2020-06-26T11:46:43 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

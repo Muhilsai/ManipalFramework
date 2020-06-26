@@ -27,7 +27,7 @@ public class TestSuite1 extends TestSetup{
 //		wdu.type(PatientPage.lname_ip, data[4]);
 //		
 //	}
-	@Test(dataProvider="negativeLogin",dataProviderClass=LoginData.class)
+	@Test(dataProvider="positiveLogin",dataProviderClass=LoginData.class)
 	public void product(String desc,String order,String customer,String Fname,String lname,String email,String Telephone,String Product,String Model) throws InterruptedException
 	{
 		wdu.type(HomePage.usernmae_ip,"admin");
@@ -47,11 +47,13 @@ public class TestSuite1 extends TestSetup{
 		wdu.click(ProductsReturn.save_btn);
 		
 		
-		//wdu.assertText(ProductsReturn.ver_msg, "Success: You have modified returns!x");
+		wdu.assertText(ProductsReturn.ver_msg, "Success: You have modified returns!");
+		Thread.sleep(3000);
+		wdu.getAttrValue(ProductsReturn.chk_box);
 		wdu.click(ProductsReturn.chk_box);
 		wdu.click(ProductsReturn.del_btn);
-		Thread.sleep(5000);
-		//wdu.Alert();
+		//Thread.sleep(3000);
+//		wdu.Alert();
 		
 //		wdu.type(ProductsReturn.order_ip,"21");
 //		wdu.type(ProductsReturn.cust_ip,"xyz");

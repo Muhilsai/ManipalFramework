@@ -47,10 +47,10 @@ public class TestSuite3 extends TestSetup{
 		wdu.click(ProductsReturn.save_btn);
 		
 		
-		//wdu.assertText(ProductsReturn.ver_msg, "Success: You have modified returns!x");
-		wdu.click(ProductsReturn.chk_box);
-		wdu.click(ProductsReturn.del_btn);
-		Thread.sleep(5000);
+		wdu.assertText(ProductsReturn.ver_msg1, " Warning: Please check the form carefully for errors!");
+//		wdu.click(ProductsReturn.chk_box);
+//		wdu.click(ProductsReturn.del_btn);
+		
 		//wdu.Alert();
 		
 //		wdu.type(ProductsReturn.order_ip,"21");

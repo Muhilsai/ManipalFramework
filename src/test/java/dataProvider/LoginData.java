@@ -6,6 +6,10 @@ import com.clearcode.utils.ExcelUtils;
 public class LoginData {
 	int a=2;
 	@DataProvider
+	public Object[][] positiveLogin(){
+		return ExcelUtils.getData("TestData.xls", "Products");
+	}
+	@DataProvider
 	public Object[][] negativeLogin(){
 		return ExcelUtils.getData("TestData.xls", "Negative");
 	}
